@@ -1,0 +1,44 @@
+.c1 {
+    padding: 50px;
+    text-decoration: underline;
+    font-size: 25px;
+    font-weight: bold;
+    color: darkblue;
+}
+
+h1 {
+    padding: 11px;
+    color: lightblack;
+}
+
+table {
+    margin-left: 50px;
+}
+
+td {
+    text-align: center;
+    color: white;
+}
+
+body {
+    background-image: url("pics/bg2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+}
+
+div {
+    margin-left: 800px;
+}
+
+.c2 {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.available {
+    background-color: lightgreen;
+    color: white;
+}

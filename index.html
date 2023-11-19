@@ -1,85 +1,46 @@
-<html>
-	<head>
-		<title>Parking System</title>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="action.js"></script>
-		<style>
-			.c1{
-				padding:50px;
-				text-decoration:underline;
-				font-size:25px;
-				font-weight:bold;
-				color:darkblue;
-			}
-			h1{
-				padding:11px;
-				color:lightblack;
-			}
-			table{
-				left-margin-left:50px;
-			}
-			td{
-				text-align:center;
-				color:white;
-			}
-			body{
-				background-image:url("pics/bg2.jpg");
-				background-size: cover;
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				width:100%;
-		}
-		
-		div{
-			margin-left:800px;
-		}
-		
-		.c2{
-			color:black;
-			font-size:20px;
-			font-weight:bold;
-		}
-		
-		</style>
-	</head>
-	<body>
-		<center>
-			<h1>Parking Slots Booking</h1>
-		</center>
-		<div>
-			<table>
-					<tr>
-						<td class="c1">Slots</td>
-						<td class="c1">Status</td>
-						<td class="c1">Book</td>
-					</tr>
-					<tr>
-						<td class="c2">S1</td>
-						<td id="a1" style="background-color:lightgreen;color:white">AVAILABLE</td>
-						<td><input id="b1" type="button" value="Book Slot"></button></td>
-					</tr>
-					 
-					<tr>
-						<td colspan="3">&nbsp;</td>
-					</tr>
-					
-					<tr>
-						<td class="c2">S2</td>
-						<td id="a2" style="background-color:lightgreen;color:white">AVAILABLE</td>
-						<td><input id="b2" type="button" value="Book Slot"></button></td>
-					</tr>	
-					
-					
-					<tr>
-						<td colspan="3">&nbsp;</td>
-					</tr>
-					
-					<tr>
-						<td class="c2">S3</td>
-						<td id="a3" style="background-color:lightgreen;color:white">AVAILABLE</td>
-						<td><input id="b3" type="button" value="Book Slot"></button></td>
-					</tr>
-			</table>
-		</div>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="action.js"></script>
+</head>
+<body>
+    <center>
+        <h1>Parking Slots Booking</h1>
+    </center>
+    <div>
+        <table>
+            <tr>
+                <td class="c1">Slots</td>
+                <td class="c1">Status</td>
+                <td class="c1">Book</td>
+            </tr>
+            <tr>
+                <td class="c2">S1</td>
+                <td id="a1" class="available">AVAILABLE</td>
+                <td><input id="b1" type="button" value="Book Slot"></td>
+            </tr>
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="c2">S2</td>
+                <td id="a2" class="available">AVAILABLE</td>
+                <td><input id="b2" type="button" value="Book Slot"></td>
+            </tr>    
+            <tr>
+                <td colspan="3">&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="c2">S3</td>
+                <td id="a3" class="available">AVAILABLE</td>
+                <td><input id="b3" type="button" value="Book Slot"></td>
+            </tr>
+        </table>
+    </div>
+</body>
 </html>
