@@ -1,0 +1,48 @@
+from flask import Flask, render_template
+import RPi.GPIO as GPIO
+import time
+import paho.mqtt.client as mqtt
+
+app = Flask(__name__)
+
+# GPIO setup for PIR sensor
+GPIO.setmode(GPIO.BCM)
+GPIO_PIR = 18  # Replace with the actual GPIO pin connected to your PIR sensor
+GPIO.setup(GPIO_PIR, GPIO.IN)
+
+# MQTT setup
+MQTT_BROKER = "your_mqtt_broker_address"  # Replace with your MQTT broker address
+MQTT_TOPIC = "parking/status"
+
+mqtt_client = mqtt.Client()
+
+@app.route('/')
+def index():
+    return render_template('index.html', status=get_parking_status())
+
+def get_parking_status():
+    if GPIO.input(GPIO_PIR):
+        status = 'Occupied'
+    else:
+        status = 'Free'
+
+    # Publish the status to MQTT topic
+    mqtt_client.publish(MQTT_TOPIC, status)
+
+    return status
+
+if __name__ == '__main__':
+    try:
+        # Connect to the MQTT broker
+        mqtt_client.connect(MQTT_BROKER, 1883, 60)
+        
+        # Start the MQTT client loop in a non-blocking way
+        mqtt_client.loop_start()
+
+        # Run the Flask app
+        app.run(debug=True, host='0.0.0.0')
+
+    except KeyboardInterrupt:
+        print("App stopped by user")
+        GPIO.cleanup()
+        mqtt_client.disconnect()
